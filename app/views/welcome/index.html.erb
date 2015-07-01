@@ -1,0 +1,17 @@
+<h1> Image Feed </h1>
+
+<%= link_to 'My Photos', controller: 'photos' %>
+
+<table>
+
+
+	<% @photos.each do |photo| %>
+	<% if photo.public %>
+		<tr>
+			<p><%= photo.caption %></p>
+			<p><img src= <%= photo.image %> HEIGHT = 300 WIDTH = auto></td>
+			<p><%= link_to 'Show', photo_path(photo) %></p>
+		</tr>
+		<% end %>
+	<% end %>
+</table>
